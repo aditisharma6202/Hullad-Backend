@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use('/',getdonation);
 
-
+mongoose.set("strictQuery", false)
 mongoose.connect(CONNECTION_URL,{
     useNewUrlParser:true , useUnifiedTopology:true
 }).then(()=>app.listen(PORT,()=>console.log(`connection is established and running on port: ${PORT}`))).catch((err)=>
