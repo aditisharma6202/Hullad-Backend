@@ -4,14 +4,14 @@ import { config } from "dotenv";
 config({path:"../config.env"});
 
  export const getapikey = async(req,res)=>{
-    res.send({ key: process.env.RAZORPAY_API_KEY});
+    res.send({ key:"rzp_live_vI1xvBaVWWt10G"});
  }
 
    export const CreateOrder= async(req, res) => {
        try {
         const instance= new Razorpay({
-            key_id: process.env.RAZORPAY_API_KEY,
-            key_secret:process.env.RAZORPAY_API_SECRET,
+            key_id:"rzp_live_vI1xvBaVWWt10G",
+            key_secret:"qJ9o0zWDWPS5JZt6C05UezTv",
         });
         const options={
             amount:req.body.amount,
@@ -28,7 +28,7 @@ config({path:"../config.env"});
     export const GetOrder =(req,res)=>{
         try {
 
-           res.send({ key_id: process.env.RAZORPAY_API_KEY})    
+           res.send({ key_id:"rzp_live_vI1xvBaVWWt10G"})    
             
         } catch (error) {
             res.status(400).json({message: error.message}) 
